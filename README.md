@@ -2,7 +2,7 @@ Docker for Rails, Pragmatic Book
 July 9, 2019
 
 Starting chp8, Rspec 
-pg 96.
+pg 97.
 
 #urls
 http://localhost:3000/welcome
@@ -33,4 +33,10 @@ http://localhost:3000/pages/home
 9. docker-compose exec web rails g scaffold User first_name:string last_name:string
 10. docker-compose exec web rails db:migrate    -- pg80
 11. rm tmp/pids/server.pid
-12.
+12. docker-compose run web bin/rails webpacker:install
+    docker-compose run web bin/rails webpacker:install:react
+13. docker-compose up -d webpack_dev_server
+14. docker-compose exec web bin/rails g controller pages home
+15. docker-compose exec web rails generate rspec:install
+16. docker-compose exec web rails spec  --pg 97
+
