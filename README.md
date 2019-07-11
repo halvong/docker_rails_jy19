@@ -1,12 +1,13 @@
 Docker for Rails, Pragmatic Book
 July 9, 2019
 
-Starting chp7, playing nice with Javascript
-pg 80.
+Starting chp8, Rspec 
+pg 96.
 
 #urls
 http://localhost:3000/welcome
 http://localhost:3000/users
+http://localhost:3000/pages/home
 
 #Rails
 1. docker run -i -t --rm -v ${PWD}:/usr/src/app ruby:2.6 bash
