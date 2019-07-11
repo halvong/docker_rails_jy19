@@ -4,28 +4,36 @@ services:
     build: .
     ports:
       - "3000:3000"
-    environment:
-      DATABASE_HOST: database
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: docker_rails
     volumes:
       - .:/usr/src/app
-    #env_file:
-    #  - .env/development/database
-    #  - .env/development/web
+    env_file:
+      - .env/development/database
+      - .env/development/web
+    environment:
+      - WEBPACKER_DEV_SERVER_HOST=webpack_dev_server
+
+  webpack_dev_server:
+    build: .
+    command: ./bin/webpack-dev-server
+    ports:
+      - 3035:3035
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env/development/web
+      - .env/development/database
+    environment:
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+
   redis:
     image: redis
+
   database:
     image: postgres
     ports:
       - "5432"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: docker_rails
-    #env_file:
-    #  - .env/development/database
+    env_file:
+      - .env/development/database
     volumes:
       - db_data:/var/lib/postgresql/data
 volumes:
