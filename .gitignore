@@ -181,4 +181,8 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
-# End of https://www.gitignore.io/api/rails,rubymine
+# End of https://www.gitignore.io/api/rails,rubymine/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity

@@ -1,7 +1,8 @@
 Docker for Rails, Pragmatic Book
-July 7, 2019
+July 9, 2019
 
 Starting chp7, playing nice with Javascript
+pg 80.
 
 #urls
 http://localhost:3000/welcome
@@ -22,7 +23,7 @@ http://localhost:3000/users
    docker-compose up -d database
    docker-compose up -d --force-recreate web
    docker-compose exec web bin/rails db:create db:migrate
-   docker-compose [rm, stope] database
+   docker-compose [rm, stop] database
    
 5. docker volume [ls rm]
 6. docker-compose build web
@@ -30,3 +31,5 @@ http://localhost:3000/users
 8. docker-compose exec web rails g controller welcome index
 9. docker-compose exec web rails g scaffold User first_name:string last_name:string
 10. docker-compose exec web rails db:migrate    -- pg80
+11. rm tmp/pids/server.pid
+12.
